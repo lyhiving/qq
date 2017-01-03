@@ -9,10 +9,10 @@ class Qq
     # CSRF
     state = Digest::MD5.hexdigest(rand.to_s)
     # get token
-    url = 'https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&' + 
-"client_id=#{appid}&" + 
-"client_secret=#{appkey}&" + 
-"code=#{code}&state=#{state}&" + 
+    url = 'https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&' +
+"client_id=#{appid}&" +
+"client_secret=#{appkey}&" +
+"code=#{code}&state=#{state}&" +
 "redirect_uri=#{red_url}"
     @token = open(url).read[/(?<=access_token=)\w{32}/]
     # return fail 'CSRF detected' if params[:state] != state
