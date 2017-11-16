@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'Qq'
+require 'qq'
 
 set :bind, 'YOUR SITE'
 enable :sessions
